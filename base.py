@@ -186,6 +186,21 @@ def check_file_not_exists(filepath, lang='en'):
     return True, f"File '{filepath}' does not exist."
 
 
+def check_nonempty_file_exists(filepath, lang='en'):
+    """Check that a given file exists and is not empty."""
+    if not os.path.isfile(filepath):
+        if lang == 'pt':
+            return False, f"O arquivo '{filepath}' não existe."
+        return False, f"File '{filepath}' does not exist."
+    if os.path.getsize(filepath) == 0:
+        if lang == 'pt':
+            return False, f"O arquivo '{filepath}' existe mas está vazio."
+        return False, f"File '{filepath}' exists but is empty."
+    if lang == 'pt':
+        return True, f"O arquivo '{filepath}' existe e não está vazio."
+    return True, f"File '{filepath}' exists and is not empty."
+
+
 def check_empty_file_exists(filepath, lang='en'):
     """Check that a given empty file exists."""
     if not os.path.isfile(filepath):

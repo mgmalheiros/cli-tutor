@@ -20,7 +20,7 @@ This lesson covers folder navigation using the commands `ls`, `cd`, `pwd`, `mkdi
 
 7. From the lesson folder, use `cd ~` to go to your home directory. Confirm with `pwd`. Then manually return to the lesson folder.
 
-8. Inside the lesson folder, create a folder called `delta` and use `echo hello > delta/greeting` to create a file inside it. Verify the file exists with `ls -la delta` (the flags `-la` show extra information).
+8. Inside the lesson folder, create a folder called `delta` and use `echo hello > delta/greeting` to create a file inside it. Verify the file exists with `ls delta`.
 
 9. At the lesson folder, Create a folder called `empty` using `mkdir empty`. Then remove it using `rmdir empty`. Verify it is gone with `ls`.
 

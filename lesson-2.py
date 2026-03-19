@@ -47,8 +47,7 @@ TASKS = [
 
     "Inside the lesson folder, create a folder called {code}`delta`{/code} "
     "and use {code}`echo hello > delta/greeting`{/code} to create a file "
-    "inside it. Verify the file exists with {code}`ls -la delta`{/code} "
-    "(the flags {code}`-la`{/code} show extra information).",
+    "inside it. Verify the file exists with {code}`ls delta`{/code}.",
 
     "At the lesson folder, create a folder called {code}`empty`{/code} "
     "using {code}`mkdir empty`{/code}. Then remove it using "
