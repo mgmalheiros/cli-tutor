@@ -16,7 +16,7 @@ This lesson covers the basic commands  `date`, `echo`, `man` and `clear`. It als
 
 5. Test other keys like **LEFT**, **RIGHT**, **BACKSPACE**.
 
-6. Use the command `clear`. Then repeat a previous command. Now try the **CONTROL+L**` shortcut.
+6. Use the command `clear`. Then repeat a previous command. Now try the **CONTROL+L** shortcut.
 
 7. Now just type `man` but do not press **ENTER**. Instead hit the **TAB** key twice. What happened?
 

@@ -75,11 +75,14 @@ def run_checks(folder, checks):
         sys.exit(1)
 
 
-def lesson_main(lesson_number, lesson_text, tasks, get_checks):
+def lesson_main(lesson_number, lesson_text, tasks, get_checks, setup=None):
     """Generic CLI entry point for a lesson.
 
     get_checks is a callable that receives the folder path and returns
     a list of (description, check_fn) tuples.
+
+    setup is an optional callable that receives the folder path and
+    populates it with any files needed for the lesson.
     """
     args = sys.argv[1:]
     script = os.path.basename(sys.argv[0])
@@ -98,6 +101,8 @@ def lesson_main(lesson_number, lesson_text, tasks, get_checks):
             print("All folder slots (a-z) are taken.")
             sys.exit(1)
         os.makedirs(name)
+        if setup:
+            setup(name)
         print(f"Created {name}")
     elif args[0] == "tasks":
         for i, task in enumerate(tasks, 1):
