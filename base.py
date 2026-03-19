@@ -53,7 +53,7 @@ def next_folder_name(lesson_number):
 
 # ── Lesson engine ───────────────────────────────────────────────────────────
 
-def run_checks(folder, checks):
+def run_checks(folder, checks, lang='en'):
     """Run a list of (description, check_fn) tuples and print results."""
     passed = 0
     failed = 0
@@ -69,13 +69,20 @@ def run_checks(folder, checks):
 
     total = passed + failed
     if failed == 0:
-        print(f"\nAll checks passed ({total}/{total}).")
+        if lang == 'pt':
+            print(f"\nTodas as verificações passaram ({total}/{total}).")
+        else:
+            print(f"\nAll checks passed ({total}/{total}).")
     else:
-        print(f"\n{passed}/{total} checks passed, {failed} failed.")
+        if lang == 'pt':
+            print(f"\n{passed}/{total} verificações passaram, {failed} falharam.")
+        else:
+            print(f"\n{passed}/{total} checks passed, {failed} failed.")
         sys.exit(1)
 
 
-def lesson_main(lesson_number, lesson_text, tasks, get_checks, setup=None):
+def lesson_main(lesson_number, lesson_text, tasks, get_checks, setup=None,
+                lang='en'):
     """Generic CLI entry point for a lesson.
 
     get_checks is a callable that receives the folder path and returns
@@ -83,6 +90,8 @@ def lesson_main(lesson_number, lesson_text, tasks, get_checks, setup=None):
 
     setup is an optional callable that receives the folder path and
     populates it with any files needed for the lesson.
+
+    lang controls the language of UI messages ('en' or 'pt').
     """
     args = sys.argv[1:]
     script = os.path.basename(sys.argv[0])
@@ -90,20 +99,33 @@ def lesson_main(lesson_number, lesson_text, tasks, get_checks, setup=None):
     if not args:
         print(render(lesson_text))
         print()
-        print("Commands:")
-        print("  setup    Create a new practice folder")
-        print("  tasks    Show all tasks")
-        print("  task N   Show task N")
-        print("  check    Check your work")
+        if lang == 'pt':
+            print("Comandos:")
+            print("  setup    Criar uma nova pasta de prática")
+            print("  tasks    Mostrar todas as tarefas")
+            print("  task N   Mostrar a tarefa N")
+            print("  check    Verificar seu trabalho")
+        else:
+            print("Commands:")
+            print("  setup    Create a new practice folder")
+            print("  tasks    Show all tasks")
+            print("  task N   Show task N")
+            print("  check    Check your work")
     elif args[0] == "setup":
         name = next_folder_name(lesson_number)
         if name is None:
-            print("All folder slots (a-z) are taken.")
+            if lang == 'pt':
+                print("Todas as vagas de pasta (a-z) estão ocupadas.")
+            else:
+                print("All folder slots (a-z) are taken.")
             sys.exit(1)
         os.makedirs(name)
         if setup:
             setup(name)
-        print(f"Created {name}")
+        if lang == 'pt':
+            print(f"Criada {name}")
+        else:
+            print(f"Created {name}")
     elif args[0] == "tasks":
         for i, task in enumerate(tasks, 1):
             print(render(f"{BOLD}{i}.{RESET} {task}"))
@@ -111,28 +133,47 @@ def lesson_main(lesson_number, lesson_text, tasks, get_checks, setup=None):
                 print()
     elif args[0] == "task":
         if len(args) < 2:
-            print(f"Usage: {script} task N")
+            if lang == 'pt':
+                print(f"Uso: {script} task N")
+            else:
+                print(f"Usage: {script} task N")
             sys.exit(1)
         try:
             n = int(args[1])
         except ValueError:
-            print(f"Error: '{args[1]}' is not a valid task number.")
+            if lang == 'pt':
+                print(f"Erro: '{args[1]}' não é um número de tarefa válido.")
+            else:
+                print(f"Error: '{args[1]}' is not a valid task number.")
             sys.exit(1)
         if n < 1 or n > len(tasks):
-            print(f"Error: task {n} does not exist. Valid range: 1-{len(tasks)}.")
+            if lang == 'pt':
+                print(f"Erro: tarefa {n} não existe. Faixa válida: 1-{len(tasks)}.")
+            else:
+                print(f"Error: task {n} does not exist. Valid range: 1-{len(tasks)}.")
             sys.exit(1)
         print(render(f"{BOLD}{n}.{RESET} {tasks[n - 1]}"))
     elif args[0] == "check":
         folders = find_folders(lesson_number)
         if not folders:
-            print("No folder found. Run 'setup' first.")
+            if lang == 'pt':
+                print("Nenhuma pasta encontrada. Execute 'setup' primeiro.")
+            else:
+                print("No folder found. Run 'setup' first.")
             sys.exit(1)
         folder = folders[-1]
-        print(f"Checking folder {folder}...")
-        run_checks(folder, get_checks(folder))
+        if lang == 'pt':
+            print(f"Verificando pasta {folder}...")
+        else:
+            print(f"Checking folder {folder}...")
+        run_checks(folder, get_checks(folder), lang=lang)
     else:
-        print(f"Unknown command: {args[0]}")
-        print("Available commands: setup, tasks, task N, check")
+        if lang == 'pt':
+            print(f"Comando desconhecido: {args[0]}")
+            print("Comandos disponíveis: setup, tasks, task N, check")
+        else:
+            print(f"Unknown command: {args[0]}")
+            print("Available commands: setup, tasks, task N, check")
         sys.exit(1)
 
 
