@@ -1,7 +1,134 @@
-"""Shared testing functions for CLI tutor lessons."""
+"""Shared testing functions and lesson engine for CLI tutor lessons."""
 
+import glob
 import os
+import re
+import string
 import subprocess
+import sys
+
+
+# ── ANSI helpers ────────────────────────────────────────────────────────────
+
+BOLD = "\033[1m"
+ITALIC = "\033[3m"
+CODE = "\033[36m"  # cyan for inline code
+GREEN = "\033[32m"
+RED = "\033[31m"
+RESET = "\033[0m"
+
+
+def render(text):
+    """Convert markup to ANSI sequences.
+
+    Supported markers:
+      {bold}...{/bold}     → bold
+      {italic}...{/italic} → italic
+      {code}...{/code}     → cyan
+      `...`                → cyan (backticks)
+    """
+    text = text.replace("{bold}", BOLD).replace("{/bold}", RESET)
+    text = text.replace("{italic}", ITALIC).replace("{/italic}", RESET)
+    text = text.replace("{code}", CODE).replace("{/code}", RESET)
+    text = re.sub(r'`([^`]+)`', CODE + r'\1' + RESET, text)
+    return text
+
+
+# ── Folder naming helpers ───────────────────────────────────────────────────
+
+def find_folders(lesson_number):
+    """Return sorted list of existing folder-N-? directories."""
+    return sorted(glob.glob(f"folder-{lesson_number}-[a-z]"))
+
+
+def next_folder_name(lesson_number):
+    """Return the next available folder-N-? name, or None if exhausted."""
+    existing = {os.path.basename(f) for f in find_folders(lesson_number)}
+    for ch in string.ascii_lowercase:
+        name = f"folder-{lesson_number}-{ch}"
+        if name not in existing:
+            return name
+    return None
+
+
+# ── Lesson engine ───────────────────────────────────────────────────────────
+
+def run_checks(folder, checks):
+    """Run a list of (description, check_fn) tuples and print results."""
+    passed = 0
+    failed = 0
+    for desc, fn in checks:
+        ok, msg = fn()
+        if ok:
+            passed += 1
+            print(f"  {BOLD}{GREEN}✓{RESET} {desc}")
+        else:
+            failed += 1
+            print(f"  {BOLD}{RED}✗{RESET} {desc}")
+            print(f"    {msg}")
+
+    total = passed + failed
+    if failed == 0:
+        print(f"\nAll checks passed ({total}/{total}).")
+    else:
+        print(f"\n{passed}/{total} checks passed, {failed} failed.")
+        sys.exit(1)
+
+
+def lesson_main(lesson_number, lesson_text, tasks, get_checks):
+    """Generic CLI entry point for a lesson.
+
+    get_checks is a callable that receives the folder path and returns
+    a list of (description, check_fn) tuples.
+    """
+    args = sys.argv[1:]
+    script = os.path.basename(sys.argv[0])
+
+    if not args:
+        print(render(lesson_text))
+        print()
+        print("Commands:")
+        print("  setup    Create a new practice folder")
+        print("  tasks    Show all tasks")
+        print("  task N   Show task N")
+        print("  check    Check your work")
+    elif args[0] == "setup":
+        name = next_folder_name(lesson_number)
+        if name is None:
+            print("All folder slots (a-z) are taken.")
+            sys.exit(1)
+        os.makedirs(name)
+        print(f"Created {name}")
+    elif args[0] == "tasks":
+        for i, task in enumerate(tasks, 1):
+            print(render(f"{BOLD}{i}.{RESET} {task}"))
+            if i < len(tasks):
+                print()
+    elif args[0] == "task":
+        if len(args) < 2:
+            print(f"Usage: {script} task N")
+            sys.exit(1)
+        try:
+            n = int(args[1])
+        except ValueError:
+            print(f"Error: '{args[1]}' is not a valid task number.")
+            sys.exit(1)
+        if n < 1 or n > len(tasks):
+            print(f"Error: task {n} does not exist. Valid range: 1-{len(tasks)}.")
+            sys.exit(1)
+        print(render(f"{BOLD}{n}.{RESET} {tasks[n - 1]}"))
+    elif args[0] == "check":
+        folders = find_folders(lesson_number)
+        if not folders:
+            print("No folder found. Run 'setup' first.")
+            sys.exit(1)
+        folder = folders[-1]
+        print(f"Checking folder {folder}...")
+        run_checks(folder, get_checks(folder))
+    else:
+        print(f"Unknown command: {args[0]}")
+        print("Available commands: setup, tasks, task N, check")
+        sys.exit(1)
 
 
 def check_empty_folder_exists(folder, lang='en'):
