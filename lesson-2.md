@@ -1,6 +1,6 @@
 # Lesson
 
-This lesson covers folder navigation using the commands `ls`, `cd`, `pwd`, `mkdir` and `rmdir`. It also introduces the special folder names `/`, `~`, `.` and `..`.
+This lesson covers folder navigation using the commands `ls`, `cd`, `pwd`, `mkdir` and `rmdir`. It also introduces the special folder symbols `/`, `.`, `..` and `~`, 
 
 # Setup
 
@@ -12,19 +12,19 @@ This lesson covers folder navigation using the commands `ls`, `cd`, `pwd`, `mkdi
 
 3. Inside the lesson folder, create a subfolder called `alpha` using `mkdir alpha`. Verify it exists with `ls`.
 
-4. Navigate into `alpha` using `cd alpha`. Then go back to the lesson folder using `cd ..`. Confirm with `pwd`.
+4. Navigate into `alpha` using `cd alpha`. Then go back to the lesson folder using `cd ..`, and confirm with `pwd`.
 
 5. Use `mkdir -p beta/gamma` to create a nested folder structure. Then use `ls beta` to verify that `gamma` was created inside `beta`.
 
-6. Navigate into `beta/gamma`. From there, use `cd ../..` to return to the lesson folder. Confirm with `pwd`.
+6. Navigate into `beta/gamma`. Hint: type `cd ` and then **TAB**, adding new letters and pressing **TAB** again. When inside `gamma`, use `cd ../..` to return to the lesson folder. Confirm with `pwd`.
 
-7. From the lesson folder, use `cd ~` to go to your home directory. Then use `cd -` to return to the lesson folder. Confirm with `pwd`.
+7. From the lesson folder, use `cd ~` to go to your home directory. Confirm with `pwd`. Then manually return to the lesson folder.
 
-8. Inside the lesson folder, create a folder called `delta` and use `echo hello > delta/greeting` to create a file inside it. Verify the file exists with `ls delta`.
+8. Inside the lesson folder, create a folder called `delta` and use `echo hello > delta/greeting` to create a file inside it. Verify the file exists with `ls -la delta` (the flags `-la` show extra information).
 
-9. Create a folder called `empty` using `mkdir empty`. Then remove it using `rmdir empty`. Verify it is gone with `ls`.
+9. At the lesson folder, Create a folder called `empty` using `mkdir empty`. Then remove it using `rmdir empty`. Verify it is gone with `ls`.
 
-10. Create the following structure: a folder `docs` containing a subfolder `drafts`, and a file `docs/readme` with the content `project notes`. Use `mkdir -p` and `echo` with redirection.
+10. Again from lesson folder, create the following structure: a folder `docs` containing a subfolder `drafts`, and a file `docs/readme` with the content `project notes`. Use `mkdir -p` and `echo` with redirection (`>`).
 
 # Check
 

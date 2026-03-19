@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Lesson 1: basic commands date, echo, man and clear."""
+"""Lesson 2: folder navigation with ls, cd, pwd, mkdir and rmdir."""
 
 import glob
 import os
@@ -12,37 +12,55 @@ import base
 # ── Lesson content ──────────────────────────────────────────────────────────
 
 LESSON_TEXT = (
-    "This lesson covers the basic commands {code}`date`{/code}, "
-    "{code}`echo`{/code}, {code}`man`{/code} and {code}`clear`{/code}. "
-    "It also presents the main editing shortcuts, the shell history and "
-    "{bold}TAB{/bold} completion."
+    "This lesson covers folder navigation using the commands "
+    "{code}`ls`{/code}, {code}`cd`{/code}, {code}`pwd`{/code}, "
+    "{code}`mkdir`{/code} and {code}`rmdir`{/code}. It also introduces "
+    "the special folder symbols {code}`/`{/code}, "
+    "{code}`.`{/code}, {code}`..`{/code} and {code}`~`{/code}."
 )
 
 TASKS = [
-    "Use the command {code}`date`{/code}. Then use the command "
-    "{code}`date +%Y-%m-%d`{/code}. Finally, take a look at the options "
-    "with {code}`date --help`{/code}.",
+    "Run {code}`pwd`{/code} to see your current directory. Then run "
+    "{code}`ls`{/code} to list its contents.",
 
-    "Use the command {code}`echo`{/code}. Then use the command "
-    "{code}`echo test`{/code}. Finally, try the command "
-    "{code}`echo test > file`{/code}. What happened?",
+    "Use {code}`cd`{/code} to enter the lesson folder. Confirm you are "
+    "inside it with {code}`pwd`{/code}.",
 
-    "Use the command {code}`man`{/code}. Then use the command "
-    "{code}`man echo`{/code} (use the {bold}Q{/bold} key to quit). "
-    "Finally, try {code}`man date`{/code}.",
+    "Inside the lesson folder, create a subfolder called {code}`alpha`{/code} "
+    "using {code}`mkdir alpha`{/code}. Verify it exists with {code}`ls`{/code}.",
 
-    "Use the {bold}UP{/bold} key to go back in history and the "
-    "{bold}ENTER{/bold} key to execute the current command. Test also "
-    "the {bold}DOWN{/bold} key.",
+    "Navigate into {code}`alpha`{/code} using {code}`cd alpha`{/code}. Then "
+    "go back to the lesson folder using {code}`cd ..`{/code}, and confirm with "
+    "{code}`pwd`{/code}.",
 
-    "Test other keys like {bold}LEFT{/bold}, {bold}RIGHT{/bold}, "
-    "{bold}BACKSPACE{/bold}.",
+    "Use {code}`mkdir -p beta/gamma`{/code} to create a nested folder "
+    "structure. Then use {code}`ls beta`{/code} to verify that "
+    "{code}`gamma`{/code} was created inside {code}`beta`{/code}.",
 
-    "Use the command {code}`clear`{/code}. Then repeat a previous command. "
-    "Now try the {bold}CONTROL+L{/bold} shortcut.",
+    "Navigate into {code}`beta/gamma`{/code}. Hint: type {code}`cd `{/code} "
+    "and then {bold}TAB{/bold}, adding new letters and pressing "
+    "{bold}TAB{/bold} again. When inside {code}`gamma`{/code}, use "
+    "{code}`cd ../..`{/code} to return to the lesson folder. Confirm with "
+    "{code}`pwd`{/code}.",
 
-    "Now just type {code}`man`{/code} but do not press {bold}ENTER{/bold}. "
-    "Instead hit the {bold}TAB{/bold} key twice. What happened?",
+    "From the lesson folder, use {code}`cd ~`{/code} to go to your home "
+    "directory. Confirm with {code}`pwd`{/code}. Then manually return to "
+    "the lesson folder.",
+
+    "Inside the lesson folder, create a folder called {code}`delta`{/code} "
+    "and use {code}`echo hello > delta/greeting`{/code} to create a file "
+    "inside it. Verify the file exists with {code}`ls -la delta`{/code} "
+    "(the flags {code}`-la`{/code} show extra information).",
+
+    "At the lesson folder, create a folder called {code}`empty`{/code} "
+    "using {code}`mkdir empty`{/code}. Then remove it using "
+    "{code}`rmdir empty`{/code}. Verify it is gone with {code}`ls`{/code}.",
+
+    "Again from lesson folder, create the following structure: a folder {code}`docs`{/code} containing "
+    "a subfolder {code}`drafts`{/code}, and a file {code}`docs/readme`{/code} "
+    "with the content {code}`project notes`{/code}. Use "
+    "{code}`mkdir -p`{/code} and {code}`echo`{/code} with redirection "
+    "({code}`>`{/code}).",
 ]
 
 # ── ANSI helpers ────────────────────────────────────────────────────────────
@@ -73,17 +91,17 @@ def render(text):
 
 # ── Folder naming helpers ───────────────────────────────────────────────────
 
-LESSON_NUMBER = 1
+LESSON_NUMBER = 2
 FOLDER_CHARS = string.ascii_lowercase
 
 
 def find_folders():
-    """Return sorted list of existing folder-1-? directories."""
+    """Return sorted list of existing folder-2-? directories."""
     return sorted(glob.glob(f"folder-{LESSON_NUMBER}-[a-z]"))
 
 
 def next_folder_name():
-    """Return the next available folder-1-? name, or None if exhausted."""
+    """Return the next available folder-2-? name, or None if exhausted."""
     existing = {os.path.basename(f) for f in find_folders()}
     for ch in FOLDER_CHARS:
         name = f"folder-{LESSON_NUMBER}-{ch}"
@@ -136,8 +154,23 @@ def cmd_check():
     print(f"Checking folder {folder}...")
 
     checks = [
-        ("Task 2: file 'file' exists with content 'test'",
-         lambda: base.check_file_contents(os.path.join(folder, "file"), "test")),
+        ("Task 3: folder 'alpha' exists and is empty",
+         lambda: base.check_empty_folder_exists(os.path.join(folder, "alpha"))),
+
+        ("Task 5: folder 'beta/gamma' exists and is empty",
+         lambda: base.check_empty_folder_exists(os.path.join(folder, "beta", "gamma"))),
+
+        ("Task 8: file 'delta/greeting' exists with content 'hello'",
+         lambda: base.check_file_contents(os.path.join(folder, "delta", "greeting"), "hello")),
+
+        ("Task 9: folder 'empty' does not exist",
+         lambda: base.check_folder_not_exists(os.path.join(folder, "empty"))),
+
+        ("Task 10: folder 'docs/drafts' exists and is empty",
+         lambda: base.check_empty_folder_exists(os.path.join(folder, "docs", "drafts"))),
+
+        ("Task 10: file 'docs/readme' exists with content 'project notes'",
+         lambda: base.check_file_contents(os.path.join(folder, "docs", "readme"), "project notes")),
     ]
 
     passed = 0
@@ -173,7 +206,7 @@ def main():
         cmd_tasks()
     elif args[0] == "task":
         if len(args) < 2:
-            print("Usage: lesson-1.py task N")
+            print("Usage: lesson-2.py task N")
             sys.exit(1)
         try:
             n = int(args[1])
