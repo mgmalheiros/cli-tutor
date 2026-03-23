@@ -11,52 +11,52 @@ import base
 LESSON_NUMBER = 4
 
 LESSON_TEXT = (
-    "This lesson covers shell {bold}globs{/bold} and {bold}wildcards{/bold}: "
-    "{code}`*`{/code} matches any number of characters, {code}`?`{/code} "
-    "matches exactly one character, {code}`[...]`{/code} matches a set or "
-    "range of characters and {code}`{a,b,c}`{/code} expands into multiple "
+    "This lesson covers shell **globs** and **wildcards**: "
+    "`*` matches any number of characters, `?` "
+    "matches exactly one character, `[...]` matches a set or "
+    "range of characters and `{a,b,c}` expands into multiple "
     "alternatives. These patterns let you work with many files at once."
 )
 
 TASKS = [
-    "Use {code}`cd`{/code} to enter the lesson folder. Then run "
-    "{code}`ls sample/*.txt`{/code} to list all {code}`.txt`{/code} files "
-    "inside {code}`sample`{/code}. The {code}`*`{/code} matches any number "
+    "Use `cd` to enter the lesson folder. Then run "
+    "`ls sample/*.txt` to list all `.txt` files "
+    "inside `sample`. The `*` matches any number "
     "of characters.",
 
-    "Run {code}`ls sample/*.csv`{/code} to list all {code}`.csv`{/code} "
-    "files. Then try {code}`ls sample/*.*`{/code} to list all files that "
-    "have an extension. Notice that {code}`README`{/code} is not listed "
+    "Run `ls sample/*.csv` to list all `.csv` "
+    "files. Then try `ls sample/*.*` to list all files that "
+    "have an extension. Notice that `README` is not listed "
     "because it has no dot.",
 
-    "Run {code}`ls sample/note?.txt`{/code} to list files matching "
-    "{code}`note`{/code} followed by exactly one character and "
-    "{code}`.txt`{/code}. Notice that {code}`note10.txt`{/code} is not "
-    "listed because {code}`?`{/code} matches only a single character.",
+    "Run `ls sample/note?.txt` to list files matching "
+    "`note` followed by exactly one character and "
+    "`.txt`. Notice that `note10.txt` is not "
+    "listed because `?` matches only a single character.",
 
-    "Run {code}`ls sample/note[13].txt`{/code} to list only "
-    "{code}`note1.txt`{/code} and {code}`note3.txt`{/code}. The "
-    "{code}`[...]`{/code} pattern matches any single character from the "
+    "Run `ls sample/note[13].txt` to list only "
+    "`note1.txt` and `note3.txt`. The "
+    "`[...]` pattern matches any single character from the "
     "given set.",
 
-    "Go to the {code}`sample`{/code} folder and then run "
-    "{code}`ls note[1-3].txt`{/code} to list {code}`note1.txt`{/code}, "
-    "{code}`note2.txt`{/code} and {code}`note3.txt`{/code}. Inside "
-    "{code}`[...]`{/code}, a hyphen defines a range of characters.",
+    "Go to the `sample` folder and then run "
+    "`ls note[1-3].txt` to list `note1.txt`, "
+    "`note2.txt` and `note3.txt`. Inside "
+    "`[...]`, a hyphen defines a range of characters.",
 
-    "Inside the {code}`sample`{/code} folder run "
-    "{code}`ls {report,data}.csv`{/code} to list {code}`report.csv`{/code} "
-    "and {code}`data.csv`{/code}. The {code}`{a,b}`{/code} syntax expands "
+    "Inside the `sample` folder run "
+    "`ls {report,data}.csv` to list `report.csv` "
+    "and `data.csv`. The `{a,b}` syntax expands "
     "into separate words — it is not a true wildcard but a shell expansion.",
 
     "In the lesson folder, use "
-    "{code}`ls sample/*.txt > txt_list`{/code} to save the list of all "
-    "{code}`.txt`{/code} files from {code}`sample`{/code} into a file "
-    "called {code}`txt_list`{/code}.",
+    "`ls sample/*.txt > txt_list` to save the list of all "
+    "`.txt` files from `sample` into a file "
+    "called `txt_list`.",
 
-    "Go to the {code}`sample`{/code} folder and use {code}`ls ?????.*`{/code} "
+    "Go to the `sample` folder and use `ls ?????.*` "
     "to list all files whose name (before the extension) is exactly five "
-    "characters long. Save the result into a file called {code}`../five_chars`{/code} "
+    "characters long. Save the result into a file called `../five_chars` "
     "using redirection.",
 ]
 

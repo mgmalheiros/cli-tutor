@@ -11,65 +11,65 @@ LESSON_NUMBER = 5
 
 LESSON_TEXT = (
     "Esta lição aborda a manipulação básica de texto usando os comandos "
-    "{code}`cat`{/code}, {code}`head`{/code} e {code}`tail`{/code}, e o "
-    "redirecionamento de acréscimo {code}`>>`{/code}. O comando "
-    "{code}`cat`{/code} exibe ou concatena arquivos, {code}`head`{/code} "
-    "mostra as primeiras linhas e {code}`tail`{/code} mostra as últimas "
-    "linhas. O operador {code}`>>`{/code} acrescenta ao arquivo em vez "
+    "`cat`, `head` e `tail`, e o "
+    "redirecionamento de acréscimo `>>`. O comando "
+    "`cat` exibe ou concatena arquivos, `head` "
+    "mostra as primeiras linhas e `tail` mostra as últimas "
+    "linhas. O operador `>>` acrescenta ao arquivo em vez "
     "de sobrescrevê-lo."
 )
 
 TASKS = [
-    "Entre na pasta da lição. Use {code}`cat sample/colors.txt`{/code} "
+    "Entre na pasta da lição. Use `cat sample/colors.txt` "
     "para exibir o arquivo de cores. Note que o conteúdo é mostrado no "
     "terminal.",
 
-    "Use {code}`head sample/numbers.txt`{/code} para ver as primeiras 10 "
+    "Use `head sample/numbers.txt` para ver as primeiras 10 "
     "linhas (o padrão). Como o arquivo tem exatamente 10 linhas, você vê "
-    "todas. Agora tente {code}`head -3 sample/numbers.txt`{/code} para "
+    "todas. Agora tente `head -3 sample/numbers.txt` para "
     "ver apenas as 3 primeiras linhas.",
 
-    "Use {code}`tail sample/numbers.txt`{/code} para ver as últimas 10 "
-    "linhas. Agora tente {code}`tail -4 sample/numbers.txt`{/code} para "
+    "Use `tail sample/numbers.txt` para ver as últimas 10 "
+    "linhas. Agora tente `tail -4 sample/numbers.txt` para "
     "ver apenas as 4 últimas linhas.",
 
-    "Use {code}`head -3 sample/colors.txt > warm`{/code} para salvar as "
+    "Use `head -3 sample/colors.txt > warm` para salvar as "
     "3 primeiras cores (as quentes) em um novo arquivo chamado "
-    "{code}`warm`{/code}.",
+    "`warm`.",
 
-    "Use {code}`tail -3 sample/colors.txt > cool`{/code} para salvar as "
+    "Use `tail -3 sample/colors.txt > cool` para salvar as "
     "3 últimas cores (as frias) em um novo arquivo chamado "
-    "{code}`cool`{/code}.",
+    "`cool`.",
 
-    "Na pasta da lição, use {code}`echo`{/code}, {code}`>`{/code} e "
-    "{code}`>>`{/code} para construir um arquivo linha por linha. Execute "
-    "{code}`echo first > lines`{/code}, depois "
-    "{code}`echo second >> lines`{/code}, depois "
-    "{code}`echo third >> lines`{/code}. Use {code}`cat lines`{/code} "
-    "para verificar. Note que {code}`>`{/code} cria (ou sobrescreve) "
-    "enquanto {code}`>>`{/code} acrescenta.",
+    "Na pasta da lição, use `echo`, `>` e "
+    "`>>` para construir um arquivo linha por linha. Execute "
+    "`echo first > lines`, depois "
+    "`echo second >> lines`, depois "
+    "`echo third >> lines`. Use `cat lines` "
+    "para verificar. Note que `>` cria (ou sobrescreve) "
+    "enquanto `>>` acrescenta.",
 
-    "Dentro da pasta {code}`sample`{/code}, use {code}`cat`{/code} para "
+    "Dentro da pasta `sample`, use `cat` para "
     "concatenar dois arquivos em um: "
-    "{code}`cat greeting.txt farewell.txt > ../combined`{/code}. Depois "
-    "use {code}`cat ../combined`{/code} para verificar que contém as "
+    "`cat greeting.txt farewell.txt > ../combined`. Depois "
+    "use `cat ../combined` para verificar que contém as "
     "duas linhas.",
 
-    "Use {code}`head -1 sample/numbers.txt > first_last`{/code} e depois "
-    "{code}`tail -1 sample/numbers.txt >> first_last`{/code} para criar "
+    "Use `head -1 sample/numbers.txt > first_last` e depois "
+    "`tail -1 sample/numbers.txt >> first_last` para criar "
     "um arquivo com apenas a primeira e a última linha do arquivo de "
     "números.",
 
-    "Use {code}`head -5 sample/numbers.txt > top5`{/code} e depois "
-    "{code}`tail -3 top5 > middle`{/code} para extrair as linhas 3, 4 "
+    "Use `head -5 sample/numbers.txt > top5` e depois "
+    "`tail -3 top5 > middle` para extrair as linhas 3, 4 "
     "e 5 do arquivo de números em um arquivo chamado "
-    "{code}`middle`{/code}.",
+    "`middle`.",
 
-    "Crie um arquivo chamado {code}`summary`{/code} que contenha as 2 "
-    "primeiras cores, depois uma linha separadora {code}`- - -`{/code}, "
-    "depois as 2 últimas cores. Use {code}`head`{/code}, "
-    "{code}`tail`{/code}, {code}`echo`{/code} e os operadores "
-    "{code}`>`{/code} e {code}`>>`{/code}.",
+    "Crie um arquivo chamado `summary` que contenha as 2 "
+    "primeiras cores, depois uma linha separadora `- - -`, "
+    "depois as 2 últimas cores. Use `head`, "
+    "`tail`, `echo` e os operadores "
+    "`>` e `>>`.",
 ]
 
 

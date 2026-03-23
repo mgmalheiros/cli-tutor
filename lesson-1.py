@@ -10,37 +10,37 @@ import base
 LESSON_NUMBER = 1
 
 LESSON_TEXT = (
-    "This lesson covers the basic commands {code}`date`{/code}, "
-    "{code}`echo`{/code}, {code}`man`{/code} and {code}`clear`{/code}. "
+    "This lesson covers the basic commands `date`, "
+    "`echo`, `man` and `clear`. "
     "It also presents the main editing shortcuts, the shell history and "
-    "{bold}TAB{/bold} completion."
+    "**TAB** completion."
 )
 
 TASKS = [
-    "Use the command {code}`date`{/code}. Then use the command "
-    "{code}`date +%Y-%m-%d`{/code}. Finally, take a look at the options "
-    "with {code}`date --help`{/code}.",
+    "Use the command `date`. Then use the command "
+    "`date +%Y-%m-%d`. Finally, take a look at the options "
+    "with `date --help`.",
 
-    "Use the command {code}`echo`{/code}. Then use the command "
-    "{code}`echo test`{/code}. Finally, try the command "
-    "{code}`echo test > file`{/code}. What happened?",
+    "Use the command `echo`. Then use the command "
+    "`echo test`. Finally, try the command "
+    "`echo test > file`. What happened?",
 
-    "Use the command {code}`man`{/code}. Then use the command "
-    "{code}`man echo`{/code} (use the {bold}Q{/bold} key to quit). "
-    "Finally, try {code}`man date`{/code}.",
+    "Use the command `man`. Then use the command "
+    "`man echo` (use the **Q** key to quit). "
+    "Finally, try `man date`.",
 
-    "Use the {bold}UP{/bold} key to go back in history and the "
-    "{bold}ENTER{/bold} key to execute the current command. Test also "
-    "the {bold}DOWN{/bold} key.",
+    "Use the **UP** key to go back in history and the "
+    "**ENTER** key to execute the current command. Test also "
+    "the **DOWN** key.",
 
-    "Test other keys like {bold}LEFT{/bold}, {bold}RIGHT{/bold}, "
-    "{bold}BACKSPACE{/bold}.",
+    "Test other keys like **LEFT**, **RIGHT**, "
+    "**BACKSPACE**.",
 
-    "Use the command {code}`clear`{/code}. Then repeat a previous command. "
-    "Now try the {bold}CONTROL+L{/bold} shortcut.",
+    "Use the command `clear`. Then repeat a previous command. "
+    "Now try the **CONTROL+L** shortcut.",
 
-    "Now just type {code}`man`{/code} but do not press {bold}ENTER{/bold}. "
-    "Instead hit the {bold}TAB{/bold} key twice. What happened?",
+    "Now just type `man` but do not press **ENTER**. "
+    "Instead hit the **TAB** key twice. What happened?",
 ]
 
 

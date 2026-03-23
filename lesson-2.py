@@ -11,53 +11,53 @@ LESSON_NUMBER = 2
 
 LESSON_TEXT = (
     "This lesson covers folder navigation using the commands "
-    "{code}`ls`{/code}, {code}`cd`{/code}, {code}`pwd`{/code}, "
-    "{code}`mkdir`{/code} and {code}`rmdir`{/code}. It also introduces "
-    "the special folder symbols {code}`/`{/code}, "
-    "{code}`.`{/code}, {code}`..`{/code} and {code}`~`{/code}."
+    "`ls`, `cd`, `pwd`, "
+    "`mkdir` and `rmdir`. It also introduces "
+    "the special folder symbols `/`, "
+    "`.`, `..` and `~`."
 )
 
 TASKS = [
-    "Run {code}`pwd`{/code} to see your current directory. Then run "
-    "{code}`ls`{/code} to list its contents.",
+    "Run `pwd` to see your current directory. Then run "
+    "`ls` to list its contents.",
 
-    "Use {code}`cd`{/code} to enter the lesson folder. Confirm you are "
-    "inside it with {code}`pwd`{/code}.",
+    "Use `cd` to enter the lesson folder. Confirm you are "
+    "inside it with `pwd`.",
 
-    "Inside the lesson folder, create a subfolder called {code}`alpha`{/code} "
-    "using {code}`mkdir alpha`{/code}. Verify it exists with {code}`ls`{/code}.",
+    "Inside the lesson folder, create a subfolder called `alpha` "
+    "using `mkdir alpha`. Verify it exists with `ls`.",
 
-    "Navigate into {code}`alpha`{/code} using {code}`cd alpha`{/code}. Then "
-    "go back to the lesson folder using {code}`cd ..`{/code}, and confirm with "
-    "{code}`pwd`{/code}.",
+    "Navigate into `alpha` using `cd alpha`. Then "
+    "go back to the lesson folder using `cd ..`, and confirm with "
+    "`pwd`.",
 
-    "Use {code}`mkdir -p beta/gamma`{/code} to create a nested folder "
-    "structure. Then use {code}`ls beta`{/code} to verify that "
-    "{code}`gamma`{/code} was created inside {code}`beta`{/code}.",
+    "Use `mkdir -p beta/gamma` to create a nested folder "
+    "structure. Then use `ls beta` to verify that "
+    "`gamma` was created inside `beta`.",
 
-    "Navigate into {code}`beta/gamma`{/code}. Hint: type {code}`cd `{/code} "
-    "and then {bold}TAB{/bold}, adding new letters and pressing "
-    "{bold}TAB{/bold} again. When inside {code}`gamma`{/code}, use "
-    "{code}`cd ../..`{/code} to return to the lesson folder. Confirm with "
-    "{code}`pwd`{/code}.",
+    "Navigate into `beta/gamma`. Hint: type `cd ` "
+    "and then **TAB**, adding new letters and pressing "
+    "**TAB** again. When inside `gamma`, use "
+    "`cd ../..` to return to the lesson folder. Confirm with "
+    "`pwd`.",
 
-    "From the lesson folder, use {code}`cd ~`{/code} to go to your home "
-    "directory. Confirm with {code}`pwd`{/code}. Then manually return to "
+    "From the lesson folder, use `cd ~` to go to your home "
+    "directory. Confirm with `pwd`. Then manually return to "
     "the lesson folder.",
 
-    "Inside the lesson folder, create a folder called {code}`delta`{/code} "
-    "and use {code}`echo hello > delta/greeting`{/code} to create a file "
-    "inside it. Verify the file exists with {code}`ls delta`{/code}.",
+    "Inside the lesson folder, create a folder called `delta` "
+    "and use `echo hello > delta/greeting` to create a file "
+    "inside it. Verify the file exists with `ls delta`.",
 
-    "At the lesson folder, create a folder called {code}`empty`{/code} "
-    "using {code}`mkdir empty`{/code}. Then remove it using "
-    "{code}`rmdir empty`{/code}. Verify it is gone with {code}`ls`{/code}.",
+    "At the lesson folder, create a folder called `empty` "
+    "using `mkdir empty`. Then remove it using "
+    "`rmdir empty`. Verify it is gone with `ls`.",
 
-    "Again from lesson folder, create the following structure: a folder {code}`docs`{/code} containing "
-    "a subfolder {code}`drafts`{/code}, and a file {code}`docs/readme`{/code} "
-    "with the content {code}`project notes`{/code}. Use "
-    "{code}`mkdir -p`{/code} and {code}`echo`{/code} with redirection "
-    "({code}`>`{/code}).",
+    "Again from lesson folder, create the following structure: a folder `docs` containing "
+    "a subfolder `drafts`, and a file `docs/readme` "
+    "with the content `project notes`. Use "
+    "`mkdir -p` and `echo` with redirection "
+    "(`>`).",
 ]
 
 

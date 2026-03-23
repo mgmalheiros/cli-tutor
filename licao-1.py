@@ -10,37 +10,37 @@ import base
 LESSON_NUMBER = 1
 
 LESSON_TEXT = (
-    "Esta lição aborda os comandos básicos {code}`date`{/code}, "
-    "{code}`echo`{/code}, {code}`man`{/code} e {code}`clear`{/code}. "
+    "Esta lição aborda os comandos básicos `date`, "
+    "`echo`, `man` e `clear`. "
     "Também apresenta os principais atalhos de edição, o histórico do "
-    "shell e a completação com {bold}TAB{/bold}."
+    "shell e a completação com **TAB**."
 )
 
 TASKS = [
-    "Use o comando {code}`date`{/code}. Depois use o comando "
-    "{code}`date +%Y-%m-%d`{/code}. Por fim, veja as opções "
-    "com {code}`date --help`{/code}.",
+    "Use o comando `date`. Depois use o comando "
+    "`date +%Y-%m-%d`. Por fim, veja as opções "
+    "com `date --help`.",
 
-    "Use o comando {code}`echo`{/code}. Depois use o comando "
-    "{code}`echo test`{/code}. Por fim, experimente o comando "
-    "{code}`echo test > file`{/code}. O que aconteceu?",
+    "Use o comando `echo`. Depois use o comando "
+    "`echo test`. Por fim, experimente o comando "
+    "`echo test > file`. O que aconteceu?",
 
-    "Use o comando {code}`man`{/code}. Depois use o comando "
-    "{code}`man echo`{/code} (use a tecla {bold}Q{/bold} para sair). "
-    "Por fim, experimente {code}`man date`{/code}.",
+    "Use o comando `man`. Depois use o comando "
+    "`man echo` (use a tecla **Q** para sair). "
+    "Por fim, experimente `man date`.",
 
-    "Use a tecla {bold}UP{/bold} para voltar no histórico e a tecla "
-    "{bold}ENTER{/bold} para executar o comando atual. Teste também "
-    "a tecla {bold}DOWN{/bold}.",
+    "Use a tecla **UP** para voltar no histórico e a tecla "
+    "**ENTER** para executar o comando atual. Teste também "
+    "a tecla **DOWN**.",
 
-    "Teste outras teclas como {bold}LEFT{/bold}, {bold}RIGHT{/bold}, "
-    "{bold}BACKSPACE{/bold}.",
+    "Teste outras teclas como **LEFT**, **RIGHT**, "
+    "**BACKSPACE**.",
 
-    "Use o comando {code}`clear`{/code}. Depois repita um comando anterior. "
-    "Agora experimente o atalho {bold}CONTROL+L{/bold}.",
+    "Use o comando `clear`. Depois repita um comando anterior. "
+    "Agora experimente o atalho **CONTROL+L**.",
 
-    "Agora apenas digite {code}`man`{/code} mas não pressione "
-    "{bold}ENTER{/bold}. Em vez disso, pressione a tecla {bold}TAB{/bold} "
+    "Agora apenas digite `man` mas não pressione "
+    "**ENTER**. Em vez disso, pressione a tecla **TAB** "
     "duas vezes. O que aconteceu?",
 ]
 

@@ -10,55 +10,55 @@ import base
 LESSON_NUMBER = 3
 
 LESSON_TEXT = (
-    "This lesson explores the {code}`$PATH`{/code} variable, the "
-    "{code}`which`{/code} command, and the main system folders. It also "
-    "introduces the {code}`ls -a`{/code} and {code}`ls -la`{/code} flags "
+    "This lesson explores the `$PATH` variable, the "
+    "`which` command, and the main system folders. It also "
+    "introduces the `ls -a` and `ls -la` flags "
     "for listing hidden files and detailed information."
 )
 
 TASKS = [
-    "Run {code}`echo $PATH`{/code} to see the list of directories where "
+    "Run `echo $PATH` to see the list of directories where "
     "the shell looks for commands. Notice that directories are separated "
-    "by {code}`:`{/code}.",
+    "by `:`.",
 
-    "Use {code}`which date`{/code} to find out where the {code}`date`{/code} "
-    "command is located. Then try {code}`which echo`{/code} and "
-    "{code}`which man`{/code}.",
+    "Use `which date` to find out where the `date` "
+    "command is located. Then try `which echo` and "
+    "`which man`.",
 
-    "Use {code}`ls /bin`{/code} to list the contents of the {code}`/bin`{/code} "
-    "folder. Then try {code}`ls /usr/bin`{/code}. These are the main system "
+    "Use `ls /bin` to list the contents of the `/bin` "
+    "folder. Then try `ls /usr/bin`. These are the main system "
     "folders where commands live.",
 
-    "Pick one command from the {code}`/bin`{/code} listing and use "
-    "{code}`man`{/code} to read its manual page (use the {bold}Q{/bold} key "
-    "to quit). For example, {code}`man cat`{/code} or {code}`man cp`{/code}.",
+    "Pick one command from the `/bin` listing and use "
+    "`man` to read its manual page (use the **Q** key "
+    "to quit). For example, `man cat` or `man cp`.",
 
-    "Inside the lesson folder, use {code}`echo $PATH > my_path`{/code} to "
-    "save your current {code}`$PATH`{/code} into a file called "
-    "{code}`my_path`{/code}.",
+    "Inside the lesson folder, use `echo $PATH > my_path` to "
+    "save your current `$PATH` into a file called "
+    "`my_path`.",
 
-    "Run {code}`ls -a`{/code} inside the lesson folder. Notice that it shows "
-    "entries starting with {code}`.`{/code}, which are normally hidden. The "
-    "{code}`.`{/code} entry is the current folder and {code}`..`{/code} is "
+    "Run `ls -a` inside the lesson folder. Notice that it shows "
+    "entries starting with `.`, which are normally hidden. The "
+    "`.` entry is the current folder and `..` is "
     "the parent folder.",
 
-    "Run {code}`ls -la`{/code} inside the lesson folder. Compare the output "
-    "with plain {code}`ls`{/code}. The {code}`-l`{/code} flag shows "
+    "Run `ls -la` inside the lesson folder. Compare the output "
+    "with plain `ls`. The `-l` flag shows "
     "permissions, owner, size and date for each entry.",
 
-    "Use {code}`which`{/code} to find where {code}`ls`{/code} is located. "
-    "Then run {code}`ls -la`{/code} on that exact path to see its permissions "
-    "and size. For example, if {code}`which ls`{/code} shows "
-    "{code}`/usr/bin/ls`{/code}, run {code}`ls -la /usr/bin/ls`{/code}.",
+    "Use `which` to find where `ls` is located. "
+    "Then run `ls -la` on that exact path to see its permissions "
+    "and size. For example, if `which ls` shows "
+    "`/usr/bin/ls`, run `ls -la /usr/bin/ls`.",
 
-    "Inside the lesson folder, create a file called {code}`visible`{/code} "
-    "using {code}`echo public > visible`{/code}. Then create a hidden file "
-    "called {code}`.hidden`{/code} using {code}`echo secret > .hidden`{/code}. "
-    "Run {code}`ls`{/code} and then {code}`ls -a`{/code} to see the difference.",
+    "Inside the lesson folder, create a file called `visible` "
+    "using `echo public > visible`. Then create a hidden file "
+    "called `.hidden` using `echo secret > .hidden`. "
+    "Run `ls` and then `ls -a` to see the difference.",
 
     "Again in the lesson folder, run the command "
-    "{code}`ls -la / > listing`{/code} and then inspect (by using a text "
-    "editor) the contents of the {code}`listing`{/code} file.",
+    "`ls -la / > listing` and then inspect (by using a text "
+    "editor) the contents of the `listing` file.",
 ]
 
 

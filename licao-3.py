@@ -10,58 +10,58 @@ import base
 LESSON_NUMBER = 3
 
 LESSON_TEXT = (
-    "Esta lição explora a variável {code}`$PATH`{/code}, o comando "
-    "{code}`which`{/code} e as principais pastas do sistema. Também "
-    "apresenta as flags {code}`ls -a`{/code} e {code}`ls -la`{/code} "
+    "Esta lição explora a variável `$PATH`, o comando "
+    "`which` e as principais pastas do sistema. Também "
+    "apresenta as flags `ls -a` e `ls -la` "
     "para listar arquivos ocultos e informações detalhadas."
 )
 
 TASKS = [
-    "Execute {code}`echo $PATH`{/code} para ver a lista de diretórios "
+    "Execute `echo $PATH` para ver a lista de diretórios "
     "onde o shell procura comandos. Note que os diretórios são separados "
-    "por {code}`:`{/code}.",
+    "por `:`.",
 
-    "Use {code}`which date`{/code} para descobrir onde o comando "
-    "{code}`date`{/code} está localizado. Depois tente "
-    "{code}`which echo`{/code} e {code}`which man`{/code}.",
+    "Use `which date` para descobrir onde o comando "
+    "`date` está localizado. Depois tente "
+    "`which echo` e `which man`.",
 
-    "Use {code}`ls /bin`{/code} para listar o conteúdo da pasta "
-    "{code}`/bin`{/code}. Depois tente {code}`ls /usr/bin`{/code}. Estas "
+    "Use `ls /bin` para listar o conteúdo da pasta "
+    "`/bin`. Depois tente `ls /usr/bin`. Estas "
     "são as principais pastas do sistema onde os comandos ficam.",
 
-    "Escolha um comando da listagem de {code}`/bin`{/code} e use "
-    "{code}`man`{/code} para ler sua página de manual (use a tecla "
-    "{bold}Q{/bold} para sair). Por exemplo, {code}`man cat`{/code} ou "
-    "{code}`man cp`{/code}.",
+    "Escolha um comando da listagem de `/bin` e use "
+    "`man` para ler sua página de manual (use a tecla "
+    "**Q** para sair). Por exemplo, `man cat` ou "
+    "`man cp`.",
 
-    "Dentro da pasta da lição, use {code}`echo $PATH > my_path`{/code} "
-    "para salvar seu {code}`$PATH`{/code} atual em um arquivo chamado "
-    "{code}`my_path`{/code}.",
+    "Dentro da pasta da lição, use `echo $PATH > my_path` "
+    "para salvar seu `$PATH` atual em um arquivo chamado "
+    "`my_path`.",
 
-    "Execute {code}`ls -a`{/code} dentro da pasta da lição. Note que são "
-    "mostradas entradas começando com {code}`.`{/code}, que normalmente "
-    "ficam ocultas. A entrada {code}`.`{/code} é a pasta atual e "
-    "{code}`..`{/code} é a pasta pai.",
+    "Execute `ls -a` dentro da pasta da lição. Note que são "
+    "mostradas entradas começando com `.`, que normalmente "
+    "ficam ocultas. A entrada `.` é a pasta atual e "
+    "`..` é a pasta pai.",
 
-    "Execute {code}`ls -la`{/code} dentro da pasta da lição. Compare a "
-    "saída com {code}`ls`{/code} simples. A flag {code}`-l`{/code} mostra "
+    "Execute `ls -la` dentro da pasta da lição. Compare a "
+    "saída com `ls` simples. A flag `-l` mostra "
     "permissões, dono, tamanho e data de cada entrada.",
 
-    "Use {code}`which`{/code} para descobrir onde {code}`ls`{/code} está "
-    "localizado. Depois execute {code}`ls -la`{/code} nesse caminho exato "
+    "Use `which` para descobrir onde `ls` está "
+    "localizado. Depois execute `ls -la` nesse caminho exato "
     "para ver suas permissões e tamanho. Por exemplo, se "
-    "{code}`which ls`{/code} mostrar {code}`/usr/bin/ls`{/code}, execute "
-    "{code}`ls -la /usr/bin/ls`{/code}.",
+    "`which ls` mostrar `/usr/bin/ls`, execute "
+    "`ls -la /usr/bin/ls`.",
 
     "Dentro da pasta da lição, crie um arquivo chamado "
-    "{code}`visible`{/code} usando {code}`echo public > visible`{/code}. "
-    "Depois crie um arquivo oculto chamado {code}`.hidden`{/code} usando "
-    "{code}`echo secret > .hidden`{/code}. Execute {code}`ls`{/code} e "
-    "depois {code}`ls -a`{/code} para ver a diferença.",
+    "`visible` usando `echo public > visible`. "
+    "Depois crie um arquivo oculto chamado `.hidden` usando "
+    "`echo secret > .hidden`. Execute `ls` e "
+    "depois `ls -a` para ver a diferença.",
 
     "Novamente na pasta da lição, execute o comando "
-    "{code}`ls -la / > listing`{/code} e depois inspecione (usando um "
-    "editor de texto) o conteúdo do arquivo {code}`listing`{/code}.",
+    "`ls -la / > listing` e depois inspecione (usando um "
+    "editor de texto) o conteúdo do arquivo `listing`.",
 ]
 
 

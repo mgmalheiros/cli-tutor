@@ -11,58 +11,58 @@ LESSON_NUMBER = 5
 
 LESSON_TEXT = (
     "This lesson covers basic text manipulation using the commands "
-    "{code}`cat`{/code}, {code}`head`{/code} and {code}`tail`{/code}, and "
-    "the append redirection {code}`>>`{/code}. The {code}`cat`{/code} "
-    "command displays or concatenates files, {code}`head`{/code} shows the "
-    "first lines and {code}`tail`{/code} shows the last lines. The "
-    "{code}`>>`{/code} operator appends to a file instead of overwriting it."
+    "`cat`, `head` and `tail`, and "
+    "the append redirection `>>`. The `cat` "
+    "command displays or concatenates files, `head` shows the "
+    "first lines and `tail` shows the last lines. The "
+    "`>>` operator appends to a file instead of overwriting it."
 )
 
 TASKS = [
-    "Enter the lesson folder. Use {code}`cat sample/colors.txt`{/code} to "
+    "Enter the lesson folder. Use `cat sample/colors.txt` to "
     "display the colors file. Notice that the contents are shown in the "
     "terminal.",
 
-    "Use {code}`head sample/numbers.txt`{/code} to see the first 10 lines "
+    "Use `head sample/numbers.txt` to see the first 10 lines "
     "(the default). Since the file has exactly 10 lines, you see all of "
-    "them. Now try {code}`head -3 sample/numbers.txt`{/code} to see only "
+    "them. Now try `head -3 sample/numbers.txt` to see only "
     "the first 3 lines.",
 
-    "Use {code}`tail sample/numbers.txt`{/code} to see the last 10 lines. "
-    "Now try {code}`tail -4 sample/numbers.txt`{/code} to see only the "
+    "Use `tail sample/numbers.txt` to see the last 10 lines. "
+    "Now try `tail -4 sample/numbers.txt` to see only the "
     "last 4 lines.",
 
-    "Use {code}`head -3 sample/colors.txt > warm`{/code} to save the first "
-    "3 colors (the warm ones) into a new file called {code}`warm`{/code}.",
+    "Use `head -3 sample/colors.txt > warm` to save the first "
+    "3 colors (the warm ones) into a new file called `warm`.",
 
-    "Use {code}`tail -3 sample/colors.txt > cool`{/code} to save the last "
-    "3 colors (the cool ones) into a new file called {code}`cool`{/code}.",
+    "Use `tail -3 sample/colors.txt > cool` to save the last "
+    "3 colors (the cool ones) into a new file called `cool`.",
 
-    "In the lesson folder, use {code}`echo`{/code}, {code}`>`{/code} and "
-    "{code}`>>`{/code} to build a file line by line. Run "
-    "{code}`echo first > lines`{/code}, then "
-    "{code}`echo second >> lines`{/code}, then "
-    "{code}`echo third >> lines`{/code}. Use {code}`cat lines`{/code} to "
-    "verify. Notice that {code}`>`{/code} creates (or overwrites) while "
-    "{code}`>>`{/code} appends.",
+    "In the lesson folder, use `echo`, `>` and "
+    "`>>` to build a file line by line. Run "
+    "`echo first > lines`, then "
+    "`echo second >> lines`, then "
+    "`echo third >> lines`. Use `cat lines` to "
+    "verify. Notice that `>` creates (or overwrites) while "
+    "`>>` appends.",
 
-    "Inside the {code}`sample`{/code} folder, use {code}`cat`{/code} to "
+    "Inside the `sample` folder, use `cat` to "
     "concatenate two files into one: "
-    "{code}`cat greeting.txt farewell.txt > ../combined`{/code}. Then use "
-    "{code}`cat ../combined`{/code} to verify it contains both lines.",
+    "`cat greeting.txt farewell.txt > ../combined`. Then use "
+    "`cat ../combined` to verify it contains both lines.",
 
-    "Use {code}`head -1 sample/numbers.txt > first_last`{/code} and then "
-    "{code}`tail -1 sample/numbers.txt >> first_last`{/code} to create a "
+    "Use `head -1 sample/numbers.txt > first_last` and then "
+    "`tail -1 sample/numbers.txt >> first_last` to create a "
     "file with only the first and last lines of the numbers file.",
 
-    "Use {code}`head -5 sample/numbers.txt > top5`{/code} and then "
-    "{code}`tail -3 top5 > middle`{/code} to extract lines 3, 4 and 5 "
-    "from the numbers file into a file called {code}`middle`{/code}.",
+    "Use `head -5 sample/numbers.txt > top5` and then "
+    "`tail -3 top5 > middle` to extract lines 3, 4 and 5 "
+    "from the numbers file into a file called `middle`.",
 
-    "Create a file called {code}`summary`{/code} that contains the first "
-    "2 colors, then a separator line {code}`- - -`{/code}, then the last "
-    "2 colors. Use {code}`head`{/code}, {code}`tail`{/code}, "
-    "{code}`echo`{/code} and the {code}`>`{/code} and {code}`>>`{/code} "
+    "Create a file called `summary` that contains the first "
+    "2 colors, then a separator line `- - -`, then the last "
+    "2 colors. Use `head`, `tail`, "
+    "`echo` and the `>` and `>>` "
     "operators.",
 ]
 

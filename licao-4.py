@@ -11,55 +11,55 @@ import base
 LESSON_NUMBER = 4
 
 LESSON_TEXT = (
-    "Esta lição aborda os {bold}globs{/bold} e {bold}wildcards{/bold} do "
-    "shell: {code}`*`{/code} corresponde a qualquer número de caracteres, "
-    "{code}`?`{/code} corresponde a exatamente um caractere, "
-    "{code}`[...]`{/code} corresponde a um conjunto ou faixa de caracteres "
-    "e {code}`{a,b,c}`{/code} expande em múltiplas alternativas. Esses "
+    "Esta lição aborda os **globs** e **wildcards** do "
+    "shell: `*` corresponde a qualquer número de caracteres, "
+    "`?` corresponde a exatamente um caractere, "
+    "`[...]` corresponde a um conjunto ou faixa de caracteres "
+    "e `{a,b,c}` expande em múltiplas alternativas. Esses "
     "padrões permitem trabalhar com muitos arquivos de uma vez."
 )
 
 TASKS = [
-    "Use {code}`cd`{/code} para entrar na pasta da lição. Depois execute "
-    "{code}`ls sample/*.txt`{/code} para listar todos os arquivos "
-    "{code}`.txt`{/code} dentro de {code}`sample`{/code}. O {code}`*`{/code} "
+    "Use `cd` para entrar na pasta da lição. Depois execute "
+    "`ls sample/*.txt` para listar todos os arquivos "
+    "`.txt` dentro de `sample`. O `*` "
     "corresponde a qualquer número de caracteres.",
 
-    "Execute {code}`ls sample/*.csv`{/code} para listar todos os arquivos "
-    "{code}`.csv`{/code}. Depois tente {code}`ls sample/*.*`{/code} para "
+    "Execute `ls sample/*.csv` para listar todos os arquivos "
+    "`.csv`. Depois tente `ls sample/*.*` para "
     "listar todos os arquivos que têm extensão. Note que "
-    "{code}`README`{/code} não aparece porque não tem ponto.",
+    "`README` não aparece porque não tem ponto.",
 
-    "Execute {code}`ls sample/note?.txt`{/code} para listar arquivos que "
-    "correspondem a {code}`note`{/code} seguido de exatamente um caractere "
-    "e {code}`.txt`{/code}. Note que {code}`note10.txt`{/code} não aparece "
-    "porque {code}`?`{/code} corresponde a apenas um único caractere.",
+    "Execute `ls sample/note?.txt` para listar arquivos que "
+    "correspondem a `note` seguido de exatamente um caractere "
+    "e `.txt`. Note que `note10.txt` não aparece "
+    "porque `?` corresponde a apenas um único caractere.",
 
-    "Execute {code}`ls sample/note[13].txt`{/code} para listar apenas "
-    "{code}`note1.txt`{/code} e {code}`note3.txt`{/code}. O padrão "
-    "{code}`[...]`{/code} corresponde a qualquer caractere único do "
+    "Execute `ls sample/note[13].txt` para listar apenas "
+    "`note1.txt` e `note3.txt`. O padrão "
+    "`[...]` corresponde a qualquer caractere único do "
     "conjunto dado.",
 
-    "Vá para a pasta {code}`sample`{/code} e execute "
-    "{code}`ls note[1-3].txt`{/code} para listar {code}`note1.txt`{/code}, "
-    "{code}`note2.txt`{/code} e {code}`note3.txt`{/code}. Dentro de "
-    "{code}`[...]`{/code}, um hífen define uma faixa de caracteres.",
+    "Vá para a pasta `sample` e execute "
+    "`ls note[1-3].txt` para listar `note1.txt`, "
+    "`note2.txt` e `note3.txt`. Dentro de "
+    "`[...]`, um hífen define uma faixa de caracteres.",
 
-    "Dentro da pasta {code}`sample`{/code} execute "
-    "{code}`ls {report,data}.csv`{/code} para listar "
-    "{code}`report.csv`{/code} e {code}`data.csv`{/code}. A sintaxe "
-    "{code}`{a,b}`{/code} expande em palavras separadas — não é um "
+    "Dentro da pasta `sample` execute "
+    "`ls {report,data}.csv` para listar "
+    "`report.csv` e `data.csv`. A sintaxe "
+    "`{a,b}` expande em palavras separadas — não é um "
     "verdadeiro wildcard, mas uma expansão do shell.",
 
     "Na pasta da lição, use "
-    "{code}`ls sample/*.txt > txt_list`{/code} para salvar a lista de "
-    "todos os arquivos {code}`.txt`{/code} de {code}`sample`{/code} em "
-    "um arquivo chamado {code}`txt_list`{/code}.",
+    "`ls sample/*.txt > txt_list` para salvar a lista de "
+    "todos os arquivos `.txt` de `sample` em "
+    "um arquivo chamado `txt_list`.",
 
-    "Vá para a pasta {code}`sample`{/code} e use "
-    "{code}`ls ?????.*`{/code} para listar todos os arquivos cujo nome "
+    "Vá para a pasta `sample` e use "
+    "`ls ?????.*` para listar todos os arquivos cujo nome "
     "(antes da extensão) tem exatamente cinco caracteres. Salve o "
-    "resultado em um arquivo chamado {code}`../five_chars`{/code} usando "
+    "resultado em um arquivo chamado `../five_chars` usando "
     "redirecionamento.",
 ]
 

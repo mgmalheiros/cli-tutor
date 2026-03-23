@@ -11,57 +11,57 @@ LESSON_NUMBER = 2
 
 LESSON_TEXT = (
     "Esta lição aborda a navegação de pastas usando os comandos "
-    "{code}`ls`{/code}, {code}`cd`{/code}, {code}`pwd`{/code}, "
-    "{code}`mkdir`{/code} e {code}`rmdir`{/code}. Também apresenta "
-    "os símbolos especiais de pasta {code}`/`{/code}, "
-    "{code}`.`{/code}, {code}`..`{/code} e {code}`~`{/code}."
+    "`ls`, `cd`, `pwd`, "
+    "`mkdir` e `rmdir`. Também apresenta "
+    "os símbolos especiais de pasta `/`, "
+    "`.`, `..` e `~`."
 )
 
 TASKS = [
-    "Execute {code}`pwd`{/code} para ver seu diretório atual. Depois "
-    "execute {code}`ls`{/code} para listar o conteúdo.",
+    "Execute `pwd` para ver seu diretório atual. Depois "
+    "execute `ls` para listar o conteúdo.",
 
-    "Use {code}`cd`{/code} para entrar na pasta da lição. Confirme que "
-    "está dentro dela com {code}`pwd`{/code}.",
+    "Use `cd` para entrar na pasta da lição. Confirme que "
+    "está dentro dela com `pwd`.",
 
     "Dentro da pasta da lição, crie uma subpasta chamada "
-    "{code}`alpha`{/code} usando {code}`mkdir alpha`{/code}. Verifique "
-    "que ela existe com {code}`ls`{/code}.",
+    "`alpha` usando `mkdir alpha`. Verifique "
+    "que ela existe com `ls`.",
 
-    "Entre em {code}`alpha`{/code} usando {code}`cd alpha`{/code}. Depois "
-    "volte para a pasta da lição usando {code}`cd ..`{/code}, e confirme "
-    "com {code}`pwd`{/code}.",
+    "Entre em `alpha` usando `cd alpha`. Depois "
+    "volte para a pasta da lição usando `cd ..`, e confirme "
+    "com `pwd`.",
 
-    "Use {code}`mkdir -p beta/gamma`{/code} para criar uma estrutura de "
-    "pastas aninhadas. Depois use {code}`ls beta`{/code} para verificar "
-    "que {code}`gamma`{/code} foi criada dentro de {code}`beta`{/code}.",
+    "Use `mkdir -p beta/gamma` para criar uma estrutura de "
+    "pastas aninhadas. Depois use `ls beta` para verificar "
+    "que `gamma` foi criada dentro de `beta`.",
 
-    "Entre em {code}`beta/gamma`{/code}. Dica: digite {code}`cd `{/code} "
-    "e depois {bold}TAB{/bold}, adicionando novas letras e pressionando "
-    "{bold}TAB{/bold} novamente. Quando estiver dentro de "
-    "{code}`gamma`{/code}, use {code}`cd ../..`{/code} para voltar à "
-    "pasta da lição. Confirme com {code}`pwd`{/code}.",
+    "Entre em `beta/gamma`. Dica: digite `cd ` "
+    "e depois **TAB**, adicionando novas letras e pressionando "
+    "**TAB** novamente. Quando estiver dentro de "
+    "`gamma`, use `cd ../..` para voltar à "
+    "pasta da lição. Confirme com `pwd`.",
 
-    "A partir da pasta da lição, use {code}`cd ~`{/code} para ir ao seu "
-    "diretório pessoal. Confirme com {code}`pwd`{/code}. Depois retorne "
+    "A partir da pasta da lição, use `cd ~` para ir ao seu "
+    "diretório pessoal. Confirme com `pwd`. Depois retorne "
     "manualmente à pasta da lição.",
 
     "Dentro da pasta da lição, crie uma pasta chamada "
-    "{code}`delta`{/code} e use "
-    "{code}`echo hello > delta/greeting`{/code} para criar um arquivo "
+    "`delta` e use "
+    "`echo hello > delta/greeting` para criar um arquivo "
     "dentro dela. Verifique que o arquivo existe com "
-    "{code}`ls delta`{/code}.",
+    "`ls delta`.",
 
-    "Na pasta da lição, crie uma pasta chamada {code}`empty`{/code} "
-    "usando {code}`mkdir empty`{/code}. Depois remova-a usando "
-    "{code}`rmdir empty`{/code}. Verifique que ela foi removida com "
-    "{code}`ls`{/code}.",
+    "Na pasta da lição, crie uma pasta chamada `empty` "
+    "usando `mkdir empty`. Depois remova-a usando "
+    "`rmdir empty`. Verifique que ela foi removida com "
+    "`ls`.",
 
     "Novamente na pasta da lição, crie a seguinte estrutura: uma pasta "
-    "{code}`docs`{/code} contendo uma subpasta {code}`drafts`{/code}, "
-    "e um arquivo {code}`docs/readme`{/code} com o conteúdo "
-    "{code}`project notes`{/code}. Use {code}`mkdir -p`{/code} e "
-    "{code}`echo`{/code} com redirecionamento ({code}`>`{/code}).",
+    "`docs` contendo uma subpasta `drafts`, "
+    "e um arquivo `docs/readme` com o conteúdo "
+    "`project notes`. Use `mkdir -p` e "
+    "`echo` com redirecionamento (`>`).",
 ]
 
 

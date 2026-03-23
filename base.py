@@ -17,18 +17,18 @@ RESET = "\033[0m"
 
 
 def render(text):
-    """Convert markup to ANSI sequences.
+    """Convert Markdown-style markup to ANSI sequences.
 
-    Supported markers:
-      {bold}...{/bold}     → bold
-      {italic}...{/italic} → italic
-      {code}...{/code}     → cyan
-      `...`                → cyan (backticks)
+    Supported markers (non-reentrant):
+      `...`        → cyan (code)
+      **...** / __...__ → bold
+      *...*  / _..._   → italic
     """
-    text = text.replace("{bold}", BOLD).replace("{/bold}", RESET)
-    text = text.replace("{italic}", ITALIC).replace("{/italic}", RESET)
-    text = text.replace("{code}", CODE).replace("{/code}", RESET)
     text = re.sub(r'`([^`]+)`', CODE + r'\1' + RESET, text)
+    text = re.sub(r'\*\*([^*]+)\*\*', BOLD + r'\1' + RESET, text)
+    text = re.sub(r'(?<!\w)__([^_]+)__(?!\w)', BOLD + r'\1' + RESET, text)
+    text = re.sub(r'\*([^*]+)\*', ITALIC + r'\1' + RESET, text)
+    text = re.sub(r'(?<!\w)_([^_]+)_(?!\w)', ITALIC + r'\1' + RESET, text)
     return text
 
 
