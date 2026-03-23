@@ -6,13 +6,13 @@ Create a `lesson-1.py` with the following features, based on the matching `lesso
 
 - When just run it has to present the introductory text found in section **Lesson**, with adequate ANSI markings for the Markdown styles. It also must show the program command-line commands.
 
-- The program has a command `setup` that creates a new folder with name `folder-1-N`, where `1` is the lesson number and `N` goes from `a` to `z`. It should first check whether such folders exists, and then create a new one, showing the according message. If there are any further setup instructions in the **Setup** section, they need to be executed inside the newly created folder. If this section is empty, only the folder should be created.
+- The program has a command `setup` that creates a new folder with name `folder-1`, where `1` is the lesson number. It should first check whether such folder exists, and only create a new one if it does not exist, showing the according message. If there are any further setup instructions in the **Setup** section, they need to be executed inside the newly created folder. If this section is empty, only the folder should be created.
 
 - The program has a command line command `tasks` that shows all defined tasks, pretty printed.
 
 - The program has a command line command `task N` which shows the specified task, also pretty printed. When there is no such task, it shows an error message. Tasks start at 1, matching the numbers at the lesson.
 
-- The program has a command line command `check` that validates a folder with the same name structure `folder-?`. If no one is found, a message is shown. If more than one folder is found, the latest one is selected. It then shows a message `checking folder <name>...` and proceeds running the verification tests found in the **Check** section. Not all tasks need to have a check. If all checks are passed, it should exhibit a message stating this and how many were checked. For each check that fails, an error message is shown.
+- The program has a command line command `check` that validates a folder with the same name structure `folder-1`. If no one is found, a message is shown. It then shows a message `checking folder <name>...` and proceeds running the verification tests found in the **Check** section. Not all tasks need to have a check. If all checks are passed, it should exhibit a message stating this and how many were checked. For each check that fails, an error message is shown.
 
 - The `check` command should utilize shared and generic testing functions like the ones described below, implemented at `base.py`. More can be added as needed. All should return a tuple of `(passed: bool, message: str)`. All functions need to have a `lang='en'` parameter, printing and returning English messages by default, otherwise providing matching Portuguese messages.
 

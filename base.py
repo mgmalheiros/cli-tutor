@@ -1,9 +1,7 @@
 """Shared testing functions and lesson engine for CLI tutor lessons."""
 
-import glob
 import os
 import re
-import string
 import subprocess
 import sys
 
@@ -36,19 +34,9 @@ def render(text):
 
 # ── Folder naming helpers ───────────────────────────────────────────────────
 
-def find_folders(lesson_number):
-    """Return sorted list of existing folder-N-? directories."""
-    return sorted(glob.glob(f"folder-{lesson_number}-[a-z]"))
-
-
-def next_folder_name(lesson_number):
-    """Return the next available folder-N-? name, or None if exhausted."""
-    existing = {os.path.basename(f) for f in find_folders(lesson_number)}
-    for ch in string.ascii_lowercase:
-        name = f"folder-{lesson_number}-{ch}"
-        if name not in existing:
-            return name
-    return None
+def folder_name(lesson_number):
+    """Return the folder name for a lesson: folder-N."""
+    return f"folder-{lesson_number}"
 
 
 # ── Lesson engine ───────────────────────────────────────────────────────────
@@ -112,20 +100,20 @@ def lesson_main(lesson_number, lesson_text, tasks, get_checks, setup=None,
             print("  task N   Show task N")
             print("  check    Check your work")
     elif args[0] == "setup":
-        name = next_folder_name(lesson_number)
-        if name is None:
+        name = folder_name(lesson_number)
+        if os.path.isdir(name):
             if lang == 'pt':
-                print("Todas as vagas de pasta (a-z) estão ocupadas.")
+                print(f"A pasta '{name}' já existe.")
             else:
-                print("All folder slots (a-z) are taken.")
-            sys.exit(1)
-        os.makedirs(name)
-        if setup:
-            setup(name)
-        if lang == 'pt':
-            print(f"Criada {name}")
+                print(f"Folder '{name}' already exists.")
         else:
-            print(f"Created {name}")
+            os.makedirs(name)
+            if setup:
+                setup(name)
+            if lang == 'pt':
+                print(f"Criada {name}")
+            else:
+                print(f"Created {name}")
     elif args[0] == "tasks":
         for i, task in enumerate(tasks, 1):
             print(render(f"{BOLD}{i}.{RESET} {task}"))
@@ -154,14 +142,13 @@ def lesson_main(lesson_number, lesson_text, tasks, get_checks, setup=None,
             sys.exit(1)
         print(render(f"{BOLD}{n}.{RESET} {tasks[n - 1]}"))
     elif args[0] == "check":
-        folders = find_folders(lesson_number)
-        if not folders:
+        folder = folder_name(lesson_number)
+        if not os.path.isdir(folder):
             if lang == 'pt':
                 print("Nenhuma pasta encontrada. Execute 'setup' primeiro.")
             else:
                 print("No folder found. Run 'setup' first.")
             sys.exit(1)
-        folder = folders[-1]
         if lang == 'pt':
             print(f"Verificando pasta {folder}...")
         else:
