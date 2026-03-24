@@ -8,11 +8,11 @@ import sys
 
 # ── ANSI helpers ────────────────────────────────────────────────────────────
 
+CODE = "\033[36m"  # cyan for inline code
 BOLD = "\033[1m"
 ITALIC = "\033[3m"
-CODE = "\033[36m"  # cyan for inline code
-GREEN = "\033[32m"
 RED = "\033[31m"
+GREEN = "\033[32m"
 RESET = "\033[0m"
 
 
@@ -20,14 +20,12 @@ def render(text):
     """Convert Markdown-style markup to ANSI sequences.
 
     Supported markers (non-reentrant):
-      `...`        → cyan (code)
-      **...** / __...__ → bold
-      *...*  / _..._   → italic
+      `...`   → code (cyan)
+      **...** → bold
+      _..._   → italic
     """
     text = re.sub(r'`([^`]+)`', CODE + r'\1' + RESET, text)
     text = re.sub(r'\*\*([^*]+)\*\*', BOLD + r'\1' + RESET, text)
-    text = re.sub(r'(?<!\w)__([^_]+)__(?!\w)', BOLD + r'\1' + RESET, text)
-    text = re.sub(r'\*([^*]+)\*', ITALIC + r'\1' + RESET, text)
     text = re.sub(r'(?<!\w)_([^_]+)_(?!\w)', ITALIC + r'\1' + RESET, text)
     return text
 

@@ -1,6 +1,6 @@
 # Lesson
 
-This lesson covers the basic commands  `date`, `echo`, `man` and `clear`. It also presents the main editing shortcuts, the shell history and **TAB** completion.
+This lesson covers the basic commands `date`, `echo`, `man` and `clear`. It also presents the main editing shortcuts, the shell history and **TAB** completion.
 
 # Setup
 
