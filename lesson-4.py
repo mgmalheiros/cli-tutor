@@ -47,7 +47,7 @@ TASKS = [
     "Inside the `sample` folder run "
     "`ls {report,data}.csv` to list `report.csv` "
     "and `data.csv`. The `{a,b}` syntax expands "
-    "into separate words — it is not a true wildcard but a shell expansion.",
+    "into separate words.",
 
     "In the lesson folder, use "
     "`ls sample/*.txt > txt_list` to save the list of all "

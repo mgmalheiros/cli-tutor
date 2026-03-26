@@ -27,7 +27,7 @@ Create a folder called `sample` inside the lesson folder with the following file
 
 5. Go to the `sample` folder and then run `ls note[1-3].txt` to list `note1.txt`, `note2.txt` and `note3.txt`. Inside `[...]`, a hyphen defines a range of characters.
 
-6. Inside the `sample` folder run `ls {report,data}.csv` to list `report.csv` and `data.csv`. The `{a,b}` syntax expands into separate words — it is not a true wildcard but a shell expansion.
+6. Inside the `sample` folder run `ls {report,data}.csv` to list `report.csv` and `data.csv`. The `{a,b}` syntax expands into separate words.
 
 7. In the lesson folder, use `ls sample/*.txt > txt_list` to save the list of all `.txt` files from `sample` into a file called `txt_list`.
 

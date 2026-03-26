@@ -48,8 +48,7 @@ TASKS = [
     "Dentro da pasta `sample` execute "
     "`ls {report,data}.csv` para listar "
     "`report.csv` e `data.csv`. A sintaxe "
-    "`{a,b}` expande em palavras separadas — não é um "
-    "verdadeiro wildcard, mas uma expansão do shell.",
+    "`{a,b}` expande em palavras separadas.",
 
     "Na pasta da lição, use "
     "`ls sample/*.txt > txt_list` para salvar a lista de "
